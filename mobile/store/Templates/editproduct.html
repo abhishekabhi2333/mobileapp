@@ -1,0 +1,16 @@
+{%extends 'store.html'%}
+{%block store%}
+    <h3 claas="bg warning text-dark text-center">Edit products </h3>
+    <form action="" method="post" class="text-center">
+      {% csrf_token %}
+        <table class="table table-dark">
+            <tr>
+                <td>{{form.as_table}}</td>
+                <td colspan="2"><button class="btn btn-danger">UPDATE</button></td>
+            </tr>
+        </table>
+    </form>
+      
+{%endblock store%}
+
+

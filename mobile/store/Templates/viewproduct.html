@@ -1,0 +1,26 @@
+{%extends 'store.html'%}
+{% block store %}
+<div class="container my-5">
+  <h1 class="text-center">Mobile Devices</h1>
+  <div class="row">
+    <!-- Product 1 -->
+    {%for i in data%}
+    <div class="col-md-4 mb-5">
+      <div class="card">
+        {%if i.image%}
+        <img src="{{i.image.url}}" class="card-img-top" alt="Product" height="400px" width="150px"/>
+        {%endif%}
+        <div class="card-body">
+          <h5 class="card-title">{{i.productname}}</h5>
+          <div class="card-content">{{i.content}}</div>
+          <p class="card-text">{{i.description}}</p>
+          <h6 class="text-primary">{{i.price}}</h6>
+          <a href="{% url 'dltpro' i.id %}" class="btn btn-outline-success">Delete</a>
+          <a href="{% url 'editpro' i.id %}" class="btn btn-outline-danger">Edit</a>
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+  </div>
+</div>
+{%endblock store%}
